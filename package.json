@@ -1,7 +1,10 @@
 {
+  "homepage": "https://ykute07.github.io/trytry",
   "name": "nearsound",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
