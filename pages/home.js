@@ -39,17 +39,16 @@ export default function Home() {
     /*///////////////////////
     *   Login/out Functions
     *///////////////////////
-    const handleLogin = async() => {
+     const handleLogin = async() => {
       setLoading(true)
       await uauth
         .loginWithPopup()
-        .then(() => uauth.user().then(setUser))
+        .then(() => {
+          router.push("/")
+        })
         .catch((e)=>{console.log(e)})
         .finally(() => {setRedirect(false)})
-        if(user){
-          setRedirect(false);
-          router.push("/")
-        }
+    
     }
   
   const particlesInit = (main) => {
